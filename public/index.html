@@ -1,1 +1,99 @@
-Hello world
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>BurgerHeaven</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to BurgerHeaven Online</h1>
+        <meta charset="utf-8"/>
+    </header>
+    <main>
+        <section>
+            <h2>Pick your order</h2>
+            <p>Choose burgers from the menu below</p>
+            <div style="float:left;margin:0px 70px 0px 0px;">
+                <h3 style="text-align:center">The Fire Burger</h3>
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/48/be/44/a-juicy-burger.jpg" style="height: 200px;">
+                <p>
+                    <u1>
+                        <li>900 kCal</li>
+                        <li>Contains lactose</li>
+                        <li>Contains gluten</li>
+                    </u1>
+                </p>
+            </div>
+            <div style="float:left;margin:0px 70px 0px 0px;">
+                <h3 style="text-align:center">Halloumi Burger</h3>
+                <img src="https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_161415/cf_259/halloumiburgare_med_srirachamajonnas_och_soltorkade_tomater.jpg" style="height: 200px;">
+                <p>
+                    <u1 clear="right">
+                        <li>750 kCal</li>
+                        <li>Contains lactose</li>
+                        <li>Contains gluten</li>
+                    </u1>
+                </p>
+            </div>
+            <div style="float:left;margin:0px 70px 0px 0px;";>
+                <h3 style="text-align:center">Vegan Burger</h3>
+                <img src="https://receptfavoriter.se/sites/default/files/veganburgare_1060.jpg" style="height: 200px;">
+                <p>
+                    <u1>
+                    <li>650 kCal</li>
+                    <li>Lactose free</li>
+                    <li>Contains gluten</li>
+                </u1>
+                </p>
+            </div>
+
+
+        </section>
+        <br style="clear:left";>
+        <section>
+            <h2>Customer information</h2>
+            <p>Please provide neccesary information </p>
+            <h3>Delivery information</h3>
+            <p>
+                <label for="Name">Full name</label><br>
+                <input type="text" id="Name" name="fn" required="required" placeholder="First- and last name">
+            </p>
+            <p id="contact">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="em" required="required" placeholder="Email-adress">
+            </p>
+            <p>
+                <label for="street">Street</label><br>
+                <input type="text" id="street" name="st" required="required" placeholder="Street name">
+            </p>
+            <p>
+                <label for="number">House</label><br>
+                <input type="number" id="number" name="nr" required="required" placeholder="House number">
+            </p>
+            <p>
+                <label for="payment">Payment options</label><be>
+                <select id="payment" name="pm">
+                    <option>Credit card<option/>
+                    <option selected="selected">Swish<option/>
+                    <option>Klarna<option/>
+                    <option>Bank transfer<option/>
+                <select/>
+            </p>
+            <p>
+                <legend>Gender</legend>
+                <input type="radio" id="name" name="gender" value="male">
+                <label for="name">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br>
+                <input type="radio" id="undisclosed" name="gender" value="undisclosed">
+                <label for="Undisclosed">Male</label><br>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p>&copy 2018 Hypothetical Burgers Inc.</p>
+    </footer>
+</body>
+</html>

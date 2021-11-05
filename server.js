@@ -4,8 +4,8 @@
 // Create express app
 const express = require("express");
 const app = express();
-var http = require('http').Server(app);
-var path = require('path');
+const http = require('http').Server(app);
+const path = require('path');
 
 // Generate webpack config with CLI service
 if (process.env.NODE_ENV !== 'production') {
