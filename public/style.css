@@ -42,12 +42,12 @@ section{
 }
 #welcome{
     position: absolute;
-    text-indent: 50px;
-    margin-top: -400px;
+    text-indent: 230px;
+    margin-top: -360px;
     font-size: 59px;
 }
 #custinfo{
-    padding-left: 15px;
+    padding-left: 20px;
 }
 .burgers{
     display: grid;
