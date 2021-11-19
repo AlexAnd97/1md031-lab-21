@@ -13,7 +13,7 @@ body{
 
 #information{
     border: 2px dotted black;
-    background: aliceblue;
+    background-image: linear-gradient(black, red);
 }
 button:hover{
     background: darkgray;
@@ -28,34 +28,32 @@ section{
     border-radius: 30px;
 }
 #header{
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 280px;
     overflow: hidden;
     border-radius: 30px;
 }
 
 #cover{
-    opacity: 0.5;
+    opacity: 0.6;
     width: 100%;
-    height: auto;
+    height: 25em;
 }
 #welcome{
     position: absolute;
-    text-indent: 230px;
-    margin-top: -360px;
-    font-size: 59px;
+    margin-left: 20%;
+    margin-top: -18%;
+    font-size: 3em;
 }
 #custinfo{
     padding-left: 20px;
 }
 .burgers{
     display: grid;
-    grid-gap: 20px;
+
 }
 .burger1{
     grid-column: 1;
-    margin-left: 20px;
+    margin-left: 50px;
+
 }
 .burger2{
     grid-column: 2;
@@ -66,5 +64,6 @@ section{
 }
 .choose{
     text-align: left;
-    margin-left: 30px;
+    margin-left: 50px;
+
 }

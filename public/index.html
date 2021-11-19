@@ -1,114 +1,17 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <title>BurgerHeaven</title>
-    <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <header>
-        <div id="header">
-            <img id="cover" src="https://popmenucloud.com/cdn-cgi/image/width=1200,height=1200,fit=scale-down,format=auto,quality=60/pnkdlobe/e76c1998-6dbb-44e7-ac9f-a262e9aea08e.jpg">
-            <h1 id="welcome">Welcome to BurgerHeaven Online</h1>
-        </div>
-        <meta charset="utf-8"/>
-    </header>
-    <main>
-        <section id="menu">
-            <div class="burgers">
-                <div class="choose">
-                    <h2>Pick your order</h2>
-                    <p>Choose burgers from the menu below</p>
-                </div>
-            <div class="burger1">
-                <h3 style="text-indent: 90px">The Fire Burger</h3>
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/48/be/44/a-juicy-burger.jpg" alt="span" style="height: 200px">
-                <ul>
-                    <li>900 kCal</li>
-                    <li>Contains <span class="allergies">lactose</span></li>
-                    <li>Contains <span class="allergies">gluten</span></li>
-                </ul>
-
-            </div>
-            <div class="burger2">
-                <h3 style="text-indent: 20px">Halloumi Burger</h3>
-                <img src="https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_161415/cf_259/halloumiburgare_med_srirachamajonnas_och_soltorkade_tomater.jpg" alt="span" style="height: 200px;">
-                <ul>
-                    <li>750 kCal</li>
-                    <li>Contains <span class="allergies">lactose</span></li>
-                    <li>Contains <span class="allergies">gluten</span></li>
-                </ul>
-
-            </div>
-            <div class="burger3">
-                <h3 style="text-indent: 60px">Vegan Burger <img src="https://www.v-label.eu/wp-content/uploads/2017/02/vegan.png" alt="span" style="height:20px; width:20px"></h3>
-                <img src="https://receptfavoriter.se/sites/default/files/veganburgare_1060.jpg" alt="span" style="height: 200px;">
-                    <ul>
-                        <li>650 kCal</li>
-                        <li><span class="allergies">Lactose </span>free</li>
-                        <li>Contains <span class="allergies">gluten</span></li>
-                    </ul>
-
-            </div>
-            </div>
-        </section>
-        <br style="clear:left";>
-        <section id="information">
-            <form id="custinfo">
-                <h2>Customer information</h2>
-                <p>Please provide neccesary information </p>
-                    <h3>Delivery information</h3>
-                <p>
-                    <label for="Name">Full name</label><br>
-                    <input type="text" id="Name" name="fn" required="required" placeholder="First- and last name">
-                </p>
-                <p id="contact">
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" name="em" required="required" placeholder="Email-adress">
-                </p>
-                <p>
-                    <label for="street">Street</label><br>
-                    <input type="text" id="street" name="st" required="required" placeholder="Street name">
-                </p>
-                <p>
-                    <label for="number">House</label><br>
-                    <input type="number" id="number" name="nr" required="required" placeholder="House number">
-                </p>
-                <p>
-                    <label>Payment options:</label><be>
-                    <select id="pay-options" name="payment">
-                        <option>Credit card</option>
-                        <option selected="selected">Swish</option>
-                        <option>Klarna</option>
-                        <option>Bank transfer</option>
-                    </select>
-                </be>
-
-                </p>
-                <p>
-                    <legend>Gender</legend>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
-                    <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label><br>
-                    <input checked="checked" type="radio" id="undisclosed" name="gender" value="undisclosed">
-                    <label for="undisclosed">Undisclosed</label><br>
-                </p>
-            </form>
-        </section>
-        <button type="submit">
-            <img src="https://smallimg.pngkey.com/png/small/0-9011_simbolo-de-check-verde.png" style="height:17px; width:20px">
-            Send info
-        </button>
-
-    </main>
-    <footer>
-        <hr>
-        <p>&copy 2018 Hypothetical Burgers Inc.</p>
-    </footer>
-
-</body>
-
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
