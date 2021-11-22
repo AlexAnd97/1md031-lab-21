@@ -1,0 +1,27 @@
+
+[
+     {
+      "name": "Fire burger",
+      "kCal": 800,
+      "lactose": true,
+      "gluten": true,
+      "img": "https://media-cdn.tripadvisor.com/media/photo-s/17/48/be/44/a-juicy-burger.jpg",
+       "color": "red"
+    },
+    {
+      "name": "Halloumi burger",
+      "kCal": 650,
+      "lactose": true,
+      "gluten": true,
+      "img": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_161415/cf_259/halloumiburgare_med_srirachamajonnas_och_soltorkade_tomater.jpg",
+      "color": "yellow"
+    },
+    {
+      "name": "Vegan burger",
+      "kCal": 500,
+      "lactose": false,
+      "gluten": true,
+      "img": "https://receptfavoriter.se/sites/default/files/veganburgare_1060.jpg",
+      "color": "green"
+    }
+  ]
