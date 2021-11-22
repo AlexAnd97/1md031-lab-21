@@ -27,22 +27,13 @@
         <label for="Name">Full name</label><br>
         <input type="text" id="Name" v-model="fn" required="required" placeholder="First- and last name">
       </p>
-      <span>Input:{{fn}}</span>
+
       <p id="contact">
         <label for="email">Email</label><br>
         <input type="email" id="email" v-model="em" required="required" placeholder="Email-adress">
       </p>
-      <span>Input:{{em}}</span>
-      <p>
-        <label for="street">Street</label><br>
-        <input type="text" id="street" v-model="st" required="required" placeholder="Street name">
-      </p>
-      <span>Input:{{st}}</span>
-      <p>
-        <label for="number">House</label><br>
-        <input type="number" id="number" v-model="nr" required="required" placeholder="House number">
-      </p>
-      <span>Input:{{nr}}</span>
+
+
       <p>
         <label>Payment options:</label><be>
         <select id="pay-options" v-model="payment">
@@ -51,7 +42,6 @@
           <option>Klarna</option>
           <option>Bank transfer</option>
         </select>
-        <span>Selected: {{payment}}</span>
       </be>
 
       </p>
@@ -64,16 +54,15 @@
       <label for="other">Other</label><br>
       <input checked="checked" type="radio" id="undisclosed" value="undisclosed" v-model="gender">
       <label for="undisclosed">Undisclosed</label><br>
-      <span> Picked:{{gender}}</span>
 
     </form>
       <div id="location">
         <h2> Select your location below</h2>
         <div id="view">
-        <div id="map" v-bind:key=pos v v-on:click="position">
-          <div id="dot" v-bind:style="{left: location.x + 'px',
-                      top: location.y + 'px'}">
-            {{pos}} hej
+        <div id="map" v-on:click="setLocation">
+          <div id="dot" v-bind:style="{left: this.location.x + 'px',
+                      top: this.location.y + 'px'}" >
+            T
           </div>
         </div>
         </div>
@@ -81,7 +70,7 @@
     </div>
   </section>
 
-  <button v-on:click="addOrder(key)">
+  <button v-on:click="getInfo(key)">
     <img src="https://smallimg.pngkey.com/png/small/0-9011_simbolo-de-check-verde.png" style="height:17px; width:20px">
     Send info
   </button>
@@ -141,13 +130,10 @@ export default {
       burgers:menu,
       gender:'Undisclosed',
       payment: 'Swish',
-      nr: '',
-      st: '',
       em: '',
       fn:'',
-      pos: 'T',
-      location: Object,
-      orderedBurger: Object
+      location: {x:0, y:0},
+      orderedBurger: {},
     }
   },
   methods: {
@@ -155,12 +141,26 @@ export default {
       return Math.floor(Math.random() * 100000);
     },
     getInfo: function () {
-      var form = [this.fn, this.em, this.st, this.nr, this.payment, this.gender];
-      console.log(form)
-      return form;
+      socket.emit("addOrder", {
+            orderId: this.getOrderNumber(),
+            details: {
+              x: this.location.x,
+              y: this.location.y
+            },
+        form: {
+          name: this.fn,
+          gender: this.gender,
+          payment: this.payment,
+          email: this.em,
+        },
+        items: this.orderedBurger,
+
+      });
+
     },
-    addOrder: function (event) {
-      var offset = {
+    /*
+    addOrder: function () {
+       var offset = {
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top
       };
@@ -174,19 +174,19 @@ export default {
             form: this.getInfo(),
           }
       );
-    },
+      this.location = {x: event.clientX -10 - offset.x, y:event.clientY - 10 -offset.y}
+      }, */
+
     addToOrder: function (event) {
-      this.orderedBurgers[event.name] = event.amount;
+      this.orderedBurger[event.name] = event.amount;
 
     },
-    position: function (event) {
-      console.log("halloj")
-
-
-      var position = {x: event.clientX,
-                      y: event.clientY}
-      console.log(position)
-      return position;
+    setLocation: function (event) {
+      var offset = {
+        x: event.currentTarget.getBoundingClientRect().left,
+        y: event.currentTarget.getBoundingClientRect().top
+      };
+      this.location = {x: event.clientX -10 - offset.x, y:event.clientY - 10 -offset.y}
       }
     }
 
@@ -245,6 +245,7 @@ section{
   text-align: left;
   margin-left: 50px;
   font-size: large;
+  color: white;
 }
 #location{
   text-align: center;
@@ -255,11 +256,13 @@ section{
   grid-template-rows: 100%;
 }
   #view {
-    height: 500px;
-    width: 500px;
+    height: 450px;
+    width: 450px;
     color: black;
     overflow: scroll;
-    margin-left: 14%;
+    margin-left: 18%;
+    margin-bottom: 5%;
+    position: relative;
   }
 
   .wrapper{
@@ -272,17 +275,20 @@ section{
     border-radius: 30px;
   }
   #map{
+    position: relative;
     background: url("/img/polacks.jpg");
     height: 1078px;
     width: 1920px;
+    background-repeat: no-repeat;
   }
 #dot {
-  position: absolute;
   color: black;
   width:30px;
   height:30px;
   font-weight: bold;
-
+  position: absolute;
+  border-radius: 10px;
+  cursor: crosshair;
 }
 
 </style>
